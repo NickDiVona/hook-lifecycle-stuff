@@ -10,6 +10,7 @@ export default function App() {
     setCount(count + 1);
   };
 
+  //if the count is 0 return nothing, otherwise, return the other button component
   const renderRemoveableComponent = () => {
     if (count !== 0) {
       return (
@@ -23,6 +24,7 @@ export default function App() {
       return <View />;
     }
   };
+
   //on initial mount AND on every update of the count
   useEffect(() => {
     if (count % 5 === 0) {
@@ -30,7 +32,7 @@ export default function App() {
     } else {
       setBgColor('lightblue');
     }
-    // });     //comment out the below line and comment out this line to update every time anything related to the component changes
+    // }); //comment out the below line and comment out this line to update every time anything related to the component changes
   }, [count]); //uncomment this to make the effect only fireif the count changes.
 
   return (
